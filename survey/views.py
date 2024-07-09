@@ -28,11 +28,11 @@ class SurveyListView(ListView):
             blood_pressure=request.POST['혈압(mm Hg)'],
         )
         normalized_x = scaler.transform(x)
-        y = svm_model(normalized_x)
-        request.session['result'] = y
+        y = svm_model.predict(normalized_x)
+        request.session['result'] = int(y[0])
         return redirect('result')
 
 
 def survey_result_view(request):
     print(request.session['result'])
-    return render(request, 'survey/survey.html')
+    return render(request, 'survey/result.html', {'result': request.session['result']})
