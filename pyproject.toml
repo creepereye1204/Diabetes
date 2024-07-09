@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "diabetes"
+version = "0.1.0"
+description = ""
+authors = ["creepereye <creepereye1204@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django-allauth = "^0.63.3"
+pyjwt = "^2.8.0"
+cryptography = "^42.0.8"
+scikit-learn = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

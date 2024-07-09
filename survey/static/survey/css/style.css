@@ -1,0 +1,22 @@
+.survey-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .survey-item {
+            margin-bottom: 20px;
+        }
+        .survey-item label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .survey-item input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
