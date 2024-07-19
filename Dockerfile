@@ -2,7 +2,7 @@
 FROM python:3.12.0-slim
 
 
-WORKDIR /opt/info_reels_docker
+WORKDIR /opt/Diabetes
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -25,8 +25,7 @@ RUN poetry install --no-root
 
 
 COPY ["Makefile", "./"]
-COPY survey survey
-COPY Diabetes Diabetes
+COPY . .
 
 
 EXPOSE 8080

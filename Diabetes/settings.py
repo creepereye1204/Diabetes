@@ -25,7 +25,9 @@ SECRET_KEY = "django-insecure-=*lm*$libo!s@rmf8$5+p+wu8as7bz!a7z$q54461!o$f60yu(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'survey',
+    'single_page',
     'django.contrib.sites',
     'allauth',
     'allauth.account',

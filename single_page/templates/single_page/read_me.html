@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>당뇨 검사</title>
+    <link rel="stylesheet" href="{% static 'survey/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'survey/css/style.css' %}" media="screen">
+    <script src="{% static 'survey/js/script.js' %}"></script>
+<style>
+        /* 전체 페이지 스타일링 */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* 제목 스타일링 */
+        h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* 컨테이너 스타일링 */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 시작하기 버튼 스타일링 */
+        .start-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto 0;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        /* 시작하기 버튼 hover 스타일링 */
+        .start-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- 컨테이너 div -->
+    <div class="container">
+        <!-- 제목 -->
+        <h1>당뇨병 검사기</h1>
+        <!-- 설명 문구 -->
+        <p class="lead">이 검사기를 통해 당뇨병 위험도를 확인할 수 있습니다.</p>
+        <!-- 시작하기 버튼, survey/ 로 이동 -->
+        <a href="{% url 'survey' %}" class="start-button btn btn-primary">시작하기</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

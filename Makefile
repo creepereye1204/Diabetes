@@ -1,3 +1,14 @@
+.PHONY: build-dev
+build-dev:
+	docker-compose -f docker-compose.dev.yml build
+
+.PHONY: up-dev
+up-dev:
+	docker-compose -f docker-compose.dev.yml up
+
+.PHONY: build-up-dev
+build-up-dev: build-dev up-dev
+
 .PHONY: install
 install:
 	poetry install
@@ -29,12 +40,12 @@ superuser:
 .PHONY: up
 up:
 	test -f .env || touch .env
-	docker-compose -f docker-compose.yml up --build
+	docker-compose -f docker-compose.dev.yml up --build
 
 .PHONY: up-dependencies-only
 up-dependencies-only:
 	test -f .env || touch .env
-	docker-compose -f docker-compose.yml up --force-recreate db
+	docker-compose -f docker-compose.dev.yml up --force-recreate db
 
 .PHONY: update
 update: install migrate install-pre-commit ;
@@ -45,3 +56,9 @@ add:
 	@set /p name="Enter the app name: "
 	python manage.py startapp %name%
 
+.PHONY: commit
+commit:
+	docker-compose -f docker-compose.prod.dev.yml build
+	docker commit diabetes-app-1 diabetes-app:1.0
+	docker tag diabetes-app:1.0 creepereye/diabetes:1.0
+	docker push creepereye/diabetes:1.0

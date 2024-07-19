@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google'
     # end
 ]
+sudo pkill docker-compose
 
 ```
 
